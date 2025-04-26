@@ -1,0 +1,28 @@
+version: '3.8'
+
+services:
+  app:
+    build: .
+    container_name: contest-system-app
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=development
+      # These environment variables should be updated with your RDS credentials
+      - DB_HOST=local-rds.cdmgc0kwm3c6.ap-south-1.rds.amazonaws.com
+      - DB_USER=admin
+      - DB_PASSWORD=3*Pimj7pS$
+      - DB_NAME=db-contest
+      #- DB_SYNC=true
+    networks:
+      - contest-network
+    volumes:
+      - ./:/usr/src/app
+      - /usr/src/app/node_modules
+    # command: sh -c "npm run migrate && npm run seed && npm start"
+    command: sh -c "npm start"
+
+networks:
+  contest-network:
+    driver: bridge
