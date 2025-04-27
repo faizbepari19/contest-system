@@ -12,7 +12,6 @@ const contestRoutes = require('./routes/contests');
 const participationRoutes = require('./routes/participations');
 const leaderboardRoutes = require('./routes/leaderboard');
 const prizeRoutes = require('./routes/prizes');
-// Removing notificationRoutes as it's not in product requirements
 
 // Initialize Express app
 const app = express();
@@ -31,8 +30,8 @@ app.use(express.json());
 
 // Apply rate limiting
 const limiter = rateLimit({
-  windowMs: 60 * 1000, // 1 minute
-  max: 60, // 60 requests per minute
+  windowMs: parseInt(process.env.RATE_LIMIT_WINDOW_MS) || 15 * 60 * 1000, // default: 15 minutes
+  max: parseInt(process.env.RATE_LIMIT_MAX) || 100, // default: 100 requests
   standardHeaders: true,
   legacyHeaders: false,
   message: 'Too many requests from this IP, please try again after 1 minute'

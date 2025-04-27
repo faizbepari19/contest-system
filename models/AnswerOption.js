@@ -1,5 +1,11 @@
 module.exports = (sequelize, DataTypes) => {
   const AnswerOption = sequelize.define('AnswerOption', {
+    id: {
+      type: DataTypes.INTEGER,
+      primaryKey: true,
+      autoIncrement: true,
+      allowNull: false
+    },
     answerId: {
       type: DataTypes.INTEGER,
       allowNull: false,
