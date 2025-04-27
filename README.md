@@ -51,14 +51,12 @@ The Contest Participation System is a comprehensive platform for creating and ma
   - Participation status tracking
 
 - **Leaderboard**
-  - Real-time contest rankings
+  - View in-progress contests
   - Score calculation and display
-  - Filter by contest
 
 - **Prize Management**
   - Award prizes to contest winners
-  - Prize claiming functionality
-  - Prize status tracking
+  - Prize history tracking
 
 ## Tech Stack
 
@@ -68,7 +66,6 @@ The Contest Participation System is a comprehensive platform for creating and ma
 - **Validation**: Joi
 - **Security**: Helmet, Rate Limiting, CORS
 - **Logging**: Morgan
-- **Testing**: Jest
 - **Containerization**: Docker
 
 ## System Architecture
@@ -238,9 +235,3 @@ The API implements rate limiting to prevent abuse. By default, limits are set to
 These can be configured via the `.env` file using:
 - `RATE_LIMIT_WINDOW_MS` - Time window in milliseconds
 - `RATE_LIMIT_MAX` - Maximum number of requests per window
-
-## License
-
-ISC
-```
-![alt text](image.png)
