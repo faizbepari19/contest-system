@@ -94,6 +94,8 @@ The database consists of the following main entities:
 - **Answers**: Record user's answers to questions
 - **AnswerOptions**: Junction table for linking answers to selected options
 - **Prizes**: Manage prizes awarded to contest winners
+![Screenshot 2025-04-27 at 2 28 38 PM](https://github.com/user-attachments/assets/0f16fecf-8d72-4225-b88c-8bc06b41e72a)
+
 
 ## API Documentation
 
