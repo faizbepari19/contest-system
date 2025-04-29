@@ -146,7 +146,7 @@ The database consists of the following main entities:
 
 1. Clone the repository
    ```bash
-   git clone https://github.com/yourusername/contest-system.git
+   git clone https://github.com/faizbepari19/contest-system.git
    cd contest-system
    ```
 
